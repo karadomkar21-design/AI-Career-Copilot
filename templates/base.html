@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Carrer Copilot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   <header>
+     
+      <div class="container">
+      <nav>
+         <h1 class="container heading">CareerPilot AI</h1>
+{% if request.endpoint == "dashboard" %}
+<ul>
+    <li><a href="/history">History</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+    <li><a href="/logout">Logout</a></li>
+</ul>
+{% endif %}
+         
+      </nav>
+      </div>
+   </header>
+   <main>
+      {% block content %}
+      {% endblock %}
+   </main>
+   <footer>@2026 AI Carrer Copilot</footer>
+</body>
+</html>

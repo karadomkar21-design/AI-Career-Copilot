@@ -1,0 +1,21 @@
+{% extends "Base.html" %}
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h2>Create an account</h2>
+        <p class="sub-text">
+            Start your AI Carrer Copilot journey today!
+        </p>
+        <form method="POST">
+            <input type="email" name="email" placeholder="Enter Your Email" required>
+            <input type="password" name="password" placeholder="Create Password" required>
+            <p class="sub-text">Use atleast 8 characters</p>
+            <button type="submit">Sign up</button>
+        </form>
+        <p class="switch-auth">
+            Already have an account? <a href="/login">Login</a>
+        </p>
+
+    </div>
+</div>
+{% endblock %}

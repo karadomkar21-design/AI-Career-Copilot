@@ -23,10 +23,12 @@ Return ONLY valid JSON.
     "interview_questions": []
 }}
 
+resume_text = resume_text[:3000]
 Resume:
 {resume_text}
 """
-
+    print("API KEY FOUND:", API_KEY is not None)
+    print("API KEY PREFIX:", API_KEY[:10] if API_KEY else "None")
     try:
         response = requests.post(
         "https://openrouter.ai/api/v1/chat/completions",
@@ -46,7 +48,7 @@ Resume:
         "type": "json_object"
         } 
     },
-      timeout=20
+    timeout=(10, 20)
 )
 
         response.raise_for_status()

@@ -3,7 +3,7 @@ import json
 import os
 from dotenv import load_dotenv
 
-load_dotenv("gemini.env")
+load_dotenv()
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 def analyze_resume(resume_text, user_goal):

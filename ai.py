@@ -45,7 +45,8 @@ Resume:
         "response_format": {
         "type": "json_object"
         } 
-    }
+    },
+      timeout=20
 )
 
         response.raise_for_status()

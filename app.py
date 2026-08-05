@@ -119,22 +119,23 @@ Click the link below to reset your password.
 This link expires in 30 minutes.
 """
 
-            print("Before sending email...")
+            mail.send(msg)
 
-            try:
-              mail.send(msg)
-              print("Email sent successfully")
-            except Exception as e:
-              print("MAIL ERROR:", repr(e))
-            raise
+            return("Reset link sent successfully!", "success")
 
-            print("After sending email...")
+        else:
+            return("Email not found.", "danger")
 
-            return "Password reset link sent."
+        return redirect(("login"))
 
-            return "Email not found."
+    # This runs for GET requests
+    return render_template("forgot_password.html")
 
-            return render_template("forgot_password.html")
+    return "Password reset link sent."
+
+    return "Email not found."
+
+    return render_template("forgot_password.html")
 #Reset Password
 @app.route("/reset-password/<token>", methods=["GET", "POST"])
 def reset_password(token):

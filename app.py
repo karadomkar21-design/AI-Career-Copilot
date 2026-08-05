@@ -237,7 +237,7 @@ def history():
              "result": result
     })
            
-       return render_template("History.html", reports=parsed_reports)
+       return render_template("history.html", reports=parsed_reports)
 #Logout
 @app.route("/logout", methods=["GET", "POST"])
 def logout():

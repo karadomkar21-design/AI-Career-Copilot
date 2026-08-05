@@ -119,11 +119,20 @@ Click the link below to reset your password.
 This link expires in 30 minutes.
 """
 
-            mail.send(msg)
+    print("Before sending email...")
 
-            return "Password reset link sent."
+    try:
+       mail.send(msg)
+       print("Email sent successfully")
+    except Exception as e:
+       print("MAIL ERROR:", repr(e))
+       raise
 
-        return "Email not found."
+    print("After sending email...")
+
+    return "Password reset link sent."
+
+    return "Email not found."
 
     return render_template("forgot_password.html")
 #Reset Password
